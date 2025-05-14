@@ -1,0 +1,46 @@
+/* Alterna gris en filas impares */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Panel fijo a la derecha (popup) */
+  .info-panel {
+    position: fixed;
+    top: 100px; /* ajusta según altura del header */
+    right: 0;
+    width: 300px;
+    max-height: calc(100% - 120px);
+    overflow-y: auto;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    padding: 1rem;
+    z-index: 1050;
+  }
+  @media (max-width: 991.98px) {
+    .info-panel {
+      position: static;
+      width: 100%;
+      max-height: none;
+      border-left: none;
+      margin-top: 1rem;
+    }
+  }
+  tr.selected {
+    background-color: #cce5ff !important;
+  }
+  
+  .info-panel {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
